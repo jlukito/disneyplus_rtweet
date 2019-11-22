@@ -32,10 +32,6 @@ Mandalorian or Baby Yoda?
 disneyplus$mando <- grepl(c("mandalorian", "themandalorian", "baby yoda", "babyyoda"), disneyplus$text, ignore.case = TRUE)
 ```
 
-    ## Warning in grepl(c("mandalorian", "themandalorian", "baby yoda",
-    ## "babyyoda"), : argument 'pattern' has length > 1 and only the first element
-    ## will be used
-
 ``` r
 sum(disneyplus$mando)
 ```
