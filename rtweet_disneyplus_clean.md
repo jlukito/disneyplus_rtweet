@@ -3,7 +3,7 @@ disney\_tweets
 Josephine Lukito
 November 21, 2019
 
-\#Setup
+# Setup
 
 ``` r
 disneytweets <- read.csv("rtweet_disneyplus_slim.csv", header = TRUE, stringsAsFactors = FALSE)
@@ -26,8 +26,7 @@ disneyplus <- subset(disneytweets, disneyplus == TRUE) #subset this data
 ```
 
 How many tweets about Disney Plus also included mentions of the
-Mandalorian or Baby
-Yoda?
+Mandalorian or Baby Yoda?
 
 ``` r
 disneyplus$mando <- grepl(c("mandalorian", "themandalorian", "baby yoda", "babyyoda"), disneyplus$text, ignore.case = TRUE)
@@ -54,7 +53,7 @@ disneyplus$text2 <- gsub(" ?(f|ht)tp(s?)://(.*)[.][a-z]+/[[:alnum:]]+", "", disn
 disneyplus$text2 <- gsub("\\&amp\\;", "\\&", disneyplus$text2) #ampersands
 ```
 
-\#Timeline
+# Timeline
 
 When are people tweeting about Disney plus?
 
@@ -79,8 +78,8 @@ plot(plotting)
 
 ![](rtweet_disneyplus_clean_files/figure-gfm/tsplot2-1.png)<!-- -->
 
-\#Sentiment Let’s do a quick sentiment analysis using tidytext and the
-bing lexicon
+# Sentiment 
+Let’s do a quick sentiment analysis using tidytext and the `bing` lexicon
 
 ``` r
 disney_unnest <- disneyplus %>% 
@@ -177,8 +176,7 @@ disneyp_senti %>%
 
 ![](rtweet_disneyplus_clean_files/figure-gfm/sentiment-1.png)<!-- -->
 
-\#\#Disney and
-Chill
+## Disney and Chill
 
 ``` r
 disneyplus$chill <- grepl("chill", disneyplus$text, ignore.case = TRUE) #take all tweets with fiji in it
@@ -276,7 +274,7 @@ disney_cunique$.[192]
     ## [1] Disney plus and lust? Or Netflix and chill?
     ## 6172 Levels: 'Disney Plus and chill' is a euphemism that means let's complain about old TV shows being in the wrong order and aspect ratio. ...
 
-\#Topic Modeling
+# Topic Modeling
 
 ``` r
 library(topicmodels)
