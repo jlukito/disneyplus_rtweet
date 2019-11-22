@@ -72,7 +72,7 @@ plotting <- ggplot(disneymin, aes(time)) +
 plot(plotting)
 ```
 
-![](rtweet_disneyplus_clean_files/figure-gfm/tsplot2-1.png)<!-- -->
+![](img/tweet_timeline.png)<!-- -->
 
 # Sentiment 
 Let’s do a quick sentiment analysis using tidytext and the `bing` lexicon
@@ -170,7 +170,7 @@ disneyp_senti %>%
 
     ## Selecting by n
 
-![](rtweet_disneyplus_clean_files/figure-gfm/sentiment-1.png)<!-- -->
+![](img/tweet_sentiment.png)<!-- -->
 
 ## Disney and Chill
 
@@ -293,3 +293,4 @@ disney_topterms %>%
   facet_wrap(~ topic, scales = "free") +
   coord_flip()
 ```
+![](img/rtweet_disney_topic.png)<!-- -->
